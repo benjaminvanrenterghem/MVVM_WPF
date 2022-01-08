@@ -47,3 +47,5 @@ Dit project maakt gebruik van 2 packages, namelijk:
 - MaterialDesign voor thematisering
 - Fody + PropertyChanged.Fody 
 - - Om bij ViewModels alle properties, ongeacht hun implementatie, PropertyChanged events te laten emitten (middels Bindings is de View dan steeds voorzien van de actuele waarde en is de code in het ViewModel overzichtelijker)
+
+Mits enkele oppervlakkige wijzigingen kunnen deze afhankelijkheden weggelaten worden.
