@@ -1,0 +1,151 @@
+﻿<Window x:Class="BasisToepassing.ApplicatieOverzicht"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:BasisToepassing"
+        xmlns:views="clr-namespace:BasisToepassing.MVVM.Views"
+        mc:Ignorable="d"
+        Title="MVVM applicatie" Height="600" Width="800"
+        d:DataContext="{d:DesignInstance {x:Type local:ApplicatieOverzichtViewModel}}" 
+>
+    <!-- 
+        In dit project vormt deze Window de basis voor de applicatie en is er verder 
+        van Windows geen sprake. 
+    -->
+    <Window.Resources>
+        <!-- 
+            De View(Models) die men onder het beheer wenst te plaatsen van 
+            het ApplicatieOverzicht(ViewModel) worden onder andere hier opgenomen.
+            Middels een DataTemplate wordt het verband tussen View en ViewModel gelegd.
+         -->
+        <DataTemplate DataType="{x:Type views:IntroductieViewModel}">
+            <views:IntroductieView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type views:ProductenViewModel}">
+            <views:ProductenView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type views:AccountViewModel}">
+            <views:AccountView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type views:InstellingenViewModel}">
+            <views:InstellingenView />
+        </DataTemplate>
+    </Window.Resources>
+    <Grid
+        Background="Gray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="18*" />
+            <ColumnDefinition Width="18*" />
+            <ColumnDefinition Width="18*" />
+            <ColumnDefinition Width="18*" />
+            <ColumnDefinition Width="18*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="87*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <!--
+            Heeft Binding op het ActieveViewModel.
+            De waarde van het ActieveViewModel zal bepalen welke View weergegeven zal worden, en dat indien het paar opgenomen is in de Window.Resources.
+            Het legt tevens vast op welke manier deze weergegeven zal worden.
+        -->
+        <ContentControl 
+                        Grid.Row="2" Grid.RowSpan="1" 
+                        Grid.Column="1" Grid.ColumnSpan="5" 
+                        Content="{Binding ActieveViewModel}"
+        />
+
+        <!-- #region Menu, maakt gebruik van Commands -->
+        <Label Grid.Row="1" Grid.Column="1" 
+               Content="{Binding Naam}"
+               FontSize="16" Foreground="FloralWhite"
+               Margin="0,5,0,0"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               />
+
+        <!-- De WijzigHuidigViewModel Command wordt voorzien van het ViewModel -->
+        <Button x:Name="WelkomTab"
+                Grid.Row="1" Grid.Column="2"
+                Content="Welkom"
+                FontSize="14" Foreground="White"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                Margin="10,0,10,-10" 
+                BorderThickness="1,1,1,0"
+                Click="ActiveerTab_click"
+                Command="{Binding WijzigHuidigViewModel}"
+                CommandParameter="{Binding BeheerdeViewModels[IntroductieView]}"
+                IsEnabled="True"
+                />
+
+        <Button x:Name="ProductenTab"
+                Grid.Row="1" Grid.Column="3"
+                Content="Producten"
+                FontSize="14" Foreground="White"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                Margin="10,0,10,-10"
+                BorderThickness="1,1,1,0"
+                Click="ActiveerTab_click"
+                Command="{Binding WijzigHuidigViewModel}"
+                CommandParameter="{Binding BeheerdeViewModels[ProductenView]}"
+                IsEnabled="True"
+                />
+        
+        <Button x:Name="AccountTab"
+                Grid.Row="1" Grid.Column="4"
+                Content="Account"
+                FontSize="14" Foreground="White"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                Margin="10,0,10,-10"
+                BorderThickness="1,1,1,0"
+                Click="ActiveerTab_click"
+                Command="{Binding WijzigHuidigViewModel}"
+                CommandParameter="{Binding BeheerdeViewModels[AccountView]}"
+                IsEnabled="True"
+                />
+        
+        <Button x:Name="InstellingenTab"
+                Grid.Row="1" Grid.Column="5"
+                Content="Instellingen"
+                FontSize="14" Foreground="White"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                Margin="10,0,10,-10"
+                BorderThickness="1,1,1,0"
+                Click="ActiveerTab_click"
+                Command="{Binding WijzigHuidigViewModel}"
+                CommandParameter="{Binding BeheerdeViewModels[InstellingenView]}"
+                IsEnabled="True"
+                />
+
+
+        <!--#endregion-->
+      
+        <!--#region Styling -->
+        <Border 
+            Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5"
+            CornerRadius="15,15,0,0" Panel.ZIndex="-100"
+            Background="Black" Opacity="0.60"
+            BorderThickness="0"
+            />
+        <Border Grid.Row="2" Grid.RowSpan="1" Panel.ZIndex="-100"
+                   Grid.Column="1" Grid.ColumnSpan="5" 
+                   Background="Black" Opacity="0.8"
+                   BorderBrush="MediumPurple" BorderThickness="1,2,1,1"
+                   />
+        
+        <!-- Background photo created by user3802032 - www.freepik.com -->
+        <Image Grid.Row="2" Grid.RowSpan="1" Panel.ZIndex="-99"
+                   Grid.Column="1" Grid.ColumnSpan="5" 
+                   Opacity="0.03" Stretch="UniformToFill"
+                   Source="/Design/bg.jpg"
+                   />
+
+        <!--#endregion-->
+    </Grid>
+</Window>
