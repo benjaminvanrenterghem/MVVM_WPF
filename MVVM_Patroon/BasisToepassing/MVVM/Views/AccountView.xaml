@@ -10,6 +10,33 @@
              d:DataContext="{d:DesignInstance {x:Type local:AccountViewModel}}"
              d:DesignHeight="495" d:DesignWidth="740">
     <Grid>
-        <Label Content="account" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="White"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Geeft informatie weer van een willekeurige gebruiker&#10;Het aanspreken van een beherend commando uit het ViewModel van de parent" 
+               HorizontalAlignment="Center" VerticalAlignment="Center" 
+               FontSize="16" Foreground="White"
+               Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+               />
+        
+        <!-- Illustreert hoe vanuit een View die beheerd wordt een beherend commando van de parent aangesproken wordt om te veranderen van weergegeven View -->
+        <!-- button -->
+        <!-- data in rows  -->
     </Grid>
 </UserControl>

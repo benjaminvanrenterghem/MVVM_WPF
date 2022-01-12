@@ -29,6 +29,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Domeinlaag\Domeinlaag.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Design\bg.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

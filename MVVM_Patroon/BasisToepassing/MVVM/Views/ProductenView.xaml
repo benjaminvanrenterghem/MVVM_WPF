@@ -11,6 +11,25 @@
              d:DesignHeight="495" d:DesignWidth="740"
 >
     <Grid>
-        <Label Content="producten" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="White"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        
+        <Label Content="Maakt gebruik van Binding op een ObservableCollection uit het ViewModel&#10;Het ViewModel verkrijgt de data door communicatie met een andere laag" 
+               HorizontalAlignment="Center" VerticalAlignment="Center" 
+               FontSize="16" Foreground="White"
+               Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+               />
+        
+        <!-- datagrid -->
     </Grid>
 </UserControl>

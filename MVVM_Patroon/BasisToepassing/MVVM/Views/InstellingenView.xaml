@@ -12,5 +12,7 @@
 >
     <Grid>
         <Label Content="instellingen" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="White"/>
+        
+        <!-- illustratie data wijzigen en effect op viewmodel -->
     </Grid>
 </UserControl>

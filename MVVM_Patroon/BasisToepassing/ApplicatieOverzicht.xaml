@@ -53,7 +53,7 @@
 
         <!--
             Heeft Binding op het ActieveViewModel.
-            De waarde van het ActieveViewModel zal bepalen welke View weergegeven zal worden, en dat indien het paar opgenomen is in de Window.Resources.
+            De waarde van het ActieveViewModel zal bepalen welke View weergegeven zal worden indien het paar opgenomen is in de Window.Resources en in het ApplicatieOverzichtViewModel.
             Het legt tevens vast op welke manier deze weergegeven zal worden.
         -->
         <ContentControl 
