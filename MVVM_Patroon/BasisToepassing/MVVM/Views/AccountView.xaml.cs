@@ -14,12 +14,17 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace BasisToepassing.MVVM.Views {
-	/// <summary>
-	/// Interaction logic for GebruikerView.xaml
-	/// </summary>
+
 	public partial class AccountView : UserControl {
 		public AccountView() {
 			InitializeComponent();
+		}
+
+		// StartupRoutine uit het ViewModel bij het renderen uitvoeren
+		// Een int wordt meegegeven, er wordt namelijk een not-null waarde verwacht als executieconditie
+		private void UserControl_Loaded(object sender, RoutedEventArgs e) {
+			var ctx = (AccountViewModel)this.DataContext;
+			Task.Run(() => ctx.BeginStartupRoutine.Execute(0));
 		}
 	}
 }

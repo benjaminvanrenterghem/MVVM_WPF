@@ -6,9 +6,12 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:BasisToepassing.MVVM.Views"
              xmlns:wpfapp="clr-namespace:BasisToepassing"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
+             Loaded="UserControl_Loaded"
              d:DataContext="{d:DesignInstance {x:Type local:AccountViewModel}}"
              d:DesignHeight="495" d:DesignWidth="740">
+    <!-- ^ Maakt gebruik van Loaded event handler om de command BeginStartupRoutine uit te voeren -->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10*"/>
@@ -28,15 +31,112 @@
             <RowDefinition Height="15*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
+        
+        <!--#region labels met binding op viewmodel + input elementen ter manipulatie binding value -->
+        <Label
+            Grid.Row="4"
+            Grid.Column="1"
+            HorizontalAlignment="Left" VerticalAlignment="Top"
+            Foreground="White" FontSize="16"
+            >
+            Gebruikersnaam
+        </Label>
+        <Label Grid.Row="4" Grid.Column="1"
+               HorizontalAlignment="Center" VerticalAlignment="Bottom"
+               Foreground="LightGreen" FontSize="10" Margin="0,0,0,15"
+            Content="{Binding Gebruikersnaam}" />
+        <TextBox Grid.Row="4" Grid.Column="2"
+               HorizontalAlignment="Left" VerticalAlignment="Center" Width="275"
+               Text="{Binding Gebruikersnaam, UpdateSourceTrigger=PropertyChanged}" Foreground="White" BorderBrush="#FFD0B8F9" />
+        
+        
+        <Label
+            Grid.Row="5"
+            Grid.Column="1"
+            HorizontalAlignment="Left" VerticalAlignment="Top"
+            Foreground="White" FontSize="16"
+            >
+            Email
+        </Label>
+        <Label Grid.Row="5" Grid.Column="1"
+               HorizontalAlignment="Center" VerticalAlignment="Bottom"
+               Foreground="LightGreen" FontSize="10" Margin="0,0,0,15"
+            Content="{Binding Email}" />
+        <TextBox Grid.Row="5" Grid.Column="2"
+               HorizontalAlignment="Left" VerticalAlignment="Center" Width="275"
+               Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"
+                 Foreground="White" BorderBrush="#FFD0B8F9" />
+        
+        
+        <Label
+            Grid.Row="6"
+            Grid.Column="1"
+            HorizontalAlignment="Left" VerticalAlignment="Top"
+            Foreground="White" FontSize="16"
+            >
+            Naam
+        </Label>
+        <Label Grid.Row="6" Grid.Column="1"
+               HorizontalAlignment="Center" VerticalAlignment="Bottom"
+               Foreground="LightGreen" FontSize="10" Margin="0,0,0,15"
+            Content="{Binding AccountNaam}" />
+        <TextBox Grid.Row="6" Grid.Column="2"
+               HorizontalAlignment="Left" VerticalAlignment="Center" Width="275"
+               Text="{Binding AccountNaam, UpdateSourceTrigger=PropertyChanged}"
+                 Foreground="White" BorderBrush="#FFD0B8F9" />
+        
+        
+        <Label
+            Grid.Row="7"
+            Grid.Column="1"
+            HorizontalAlignment="Left" VerticalAlignment="Top"
+            Foreground="White" FontSize="16"
+            >
+            Geboortedatum
+        </Label>
+        <Label Grid.Row="7" Grid.Column="1"
+               HorizontalAlignment="Center" VerticalAlignment="Bottom"
+               Foreground="LightGreen" FontSize="10" Margin="0,0,0,15"
+            Content="{Binding Geboortedatum}" />
+        <DatePicker Grid.Row="7" Grid.Column="2"
+               HorizontalAlignment="Left" VerticalAlignment="Center" Width="275"
+               Foreground="#777"  BorderBrush="#FFD0B8F9"
+               SelectedDate="{Binding Geboortedatum, UpdateSourceTrigger=PropertyChanged}" 
+               DisplayDateEnd="{x:Static sys:DateTime.Now}">
+        </DatePicker>
 
-        <Label Content="Geeft informatie weer van een willekeurige gebruiker&#10;Het aanspreken van een beherend commando uit het ViewModel van de parent" 
-               HorizontalAlignment="Center" VerticalAlignment="Center" 
+
+        <Label
+            Grid.Row="8"
+            Grid.Column="1"
+            HorizontalAlignment="Left" VerticalAlignment="Top"
+            Foreground="White" FontSize="16"
+            >
+            Land
+        </Label>
+        <Label Grid.Row="8" Grid.Column="1"
+               HorizontalAlignment="Center" VerticalAlignment="Bottom"
+               Foreground="LightGreen" FontSize="10" Margin="0,0,0,15"
+            Content="{Binding Land}" />
+        <TextBox Grid.Row="8" Grid.Column="2"
+               HorizontalAlignment="Left" VerticalAlignment="Center" Width="275"
+               Foreground="White"  BorderBrush="#FFD0B8F9"
+               Text="{Binding Land, UpdateSourceTrigger=PropertyChanged}"/>
+        
+        
+        
+        <!--#endregion-->
+       
+
+
+        <Label Content="Geeft informatie weer van een willekeurige gebruiker.&#10;Ter illustratie van Binding met het AccountViewModel.&#10;&#10;Het input veld toont ViewModel symbiose aan, met name het effect&#10;op de binding properties wordt weergegeven (groene tekst),&#10;deze wijzigen bij het manipuleren van het input element er naast.&#10;" 
+               HorizontalAlignment="Center"  
                FontSize="16" Foreground="White"
-               Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+               VerticalAlignment="Top"
+               Grid.Row="1" Grid.RowSpan="3"
+               Grid.Column="1" Grid.ColumnSpan="2"
                />
         
-        <!-- Illustreert hoe vanuit een View die beheerd wordt een beherend commando van de parent aangesproken wordt om te veranderen van weergegeven View -->
-        <!-- button -->
-        <!-- data in rows  -->
+        
     </Grid>
 </UserControl>

@@ -32,6 +32,10 @@
         <DataTemplate DataType="{x:Type views:InstellingenViewModel}">
             <views:InstellingenView />
         </DataTemplate>
+
+        <DataTemplate DataType="{x:Type views:PrivacyInstellingenViewModel}">
+            <views:PrivacyInstellingenView />
+        </DataTemplate>
     </Window.Resources>
     <Grid
         Background="Gray">

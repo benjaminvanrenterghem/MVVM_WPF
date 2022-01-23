@@ -34,6 +34,7 @@ namespace BasisToepassing {
 				{ nameof(ProductenView), new ProductenViewModel() },
 				{ nameof(AccountView), new AccountViewModel() },
 				{ nameof(InstellingenView), new InstellingenViewModel() },
+				{ nameof(PrivacyInstellingenView), new PrivacyInstellingenViewModel() }
 			};
 
 			// Bepalen welke View als eerste weer te geven

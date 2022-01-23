@@ -14,15 +14,12 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace BasisToepassing.MVVM.Views {
-
-	public partial class ProductenView : UserControl {
-		public ProductenView() {
+	/// <summary>
+	/// Interaction logic for PrivacyInstellingenView.xaml
+	/// </summary>
+	public partial class PrivacyInstellingenView : UserControl {
+		public PrivacyInstellingenView() {
 			InitializeComponent();
-		}
-
-		private void UserControl_Loaded(object sender, RoutedEventArgs e) {
-			var ctx = (ProductenViewModel)this.DataContext;
-			Task.Run(() => ctx.BeginStartupRoutine.Execute(0));
 		}
 	}
 }

@@ -9,9 +9,9 @@ namespace Domeinlaag.Model {
 		public int Id { get; set; }
 		public string SKU { get; set; }
 		public string Naam { get; set; }
-		public string Beschrijving { get; set; }
 		public double Gewicht { get; set; }
 		public int Stock { get; set; }
+		public string Beschrijving { get; set; }
 
 		public Product(int id, string sku, string naam, string beschrijving, double gewicht, int stock) {
 			Id = id > 0 ? id : throw new ArgumentException(nameof(id));

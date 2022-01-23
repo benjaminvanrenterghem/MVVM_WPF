@@ -11,8 +11,21 @@
              d:DesignHeight="495" d:DesignWidth="740"
 >
     <Grid>
-        <Label Content="instellingen" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="White"/>
-        
-        <!-- illustratie data wijzigen en effect op viewmodel -->
+        <!-- Placeholder buttons zonder nut buiten contextvorming -->
+        <Button VerticalAlignment="Bottom" Margin="40,0,40,240" Width="250" Height="40" IsEnabled="False">
+            Beveiliging instellingen</Button>
+        <Button VerticalAlignment="Bottom" Margin="40,0,40,190" Width="250" Height="40" IsEnabled="False">
+            Permissie instellingen</Button>
+        <Button VerticalAlignment="Bottom" Margin="40,0,40,140" Width="250" Height="40" IsEnabled="False">
+            Profiel instellingen</Button>
+        <Button VerticalAlignment="Bottom" Margin="40,0,40,40" Width="250" Height="40" IsEnabled="False">
+            Weergave instellingen</Button>
+
+        <!-- Het WijzigHuidigViewModel ontvangt de geselecteerde PrivacyInstellingenViewModel -->
+        <Button VerticalAlignment="Bottom" Margin="40,0,40,90" Width="250" Height="40" Command="{Binding DataContext.WijzigHuidigViewModel, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type wpfapp:ApplicatieOverzicht}}}"
+                CommandParameter="{Binding DataContext.BeheerdeViewModels[PrivacyInstellingenView], Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type wpfapp:ApplicatieOverzicht}}}">
+            Privacy instellingen
+        </Button>
+        <Label Content="Deze View illustreert hoe een command van het beherend paar aangeroepen&#10;wordt om van actieve View te veranderen&#10;&#10;Klik op 'Privacy instellingen' om over te schakelen"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="40" FontSize="16" Foreground="White"/>
     </Grid>
 </UserControl>
