@@ -24,7 +24,7 @@ namespace BasisToepassing.MVVM.Views {
         // Aangezien het ApplicatieOverzichtViewModel bij instantiering alle ViewModels instantieert zou dit
         // anders kunnen leiden tot een resource-spike bij opstart van de applicatie.
         // --- Dit is vooral van belang bij overzichten met grote volumes data.
-        // (i) Indien rerender niet gewenst is kan een boolean + check opgenomen worden, zie ProductenViewModel
+        // (i) Indien dit bij een rerender niet gewenst is kan een boolean + check opgenomen worden, zie ProductenViewModel
         private void StartupRoutine() {
             _accountManager = new();
 
