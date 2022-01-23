@@ -9,7 +9,7 @@ Men kan overigens vanuit de Views en ViewModels die het beheert de commando's va
 
 
 ## Repository status
-Files dienen toegevoegd te worden aan de repository.
+Het project BasisToepassing binnen de solution is volledig functioneel. Het behandelt het MVVM patroon met 2 vormen van beheer en toepassing van Bindings.
 
 
 ## De rol van App en diens codebehind
