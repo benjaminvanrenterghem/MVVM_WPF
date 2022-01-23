@@ -52,8 +52,8 @@ namespace BasisToepassing {
 				object instantie = Activator.CreateInstance(viewModel.GetType(), parameters);
 
 				// Indien het ViewModel voorzien is van een StartupRoutine Command dan wordt deze aangeroepen
-				if (instantie.GetType().GetProperty("StartupRoutine") != null) {
-					var commando = instantie.GetType().GetProperty("StartupRoutine").GetGetMethod(true).Invoke(instantie, Array.Empty<object>());
+				if (instantie.GetType().GetProperty("BeginStartupRoutine") != null) {
+					var commando = instantie.GetType().GetProperty("BeginStartupRoutine").GetGetMethod(true).Invoke(instantie, Array.Empty<object>());
 					var uitvoeringsResultaat = commando.GetType().GetMethod("Execute").Invoke(commando, new object[] { "" });
 				}
 
