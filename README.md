@@ -1,4 +1,4 @@
-Een uitgebreidere uitleg is hier terug te vinden: [Implementatie van het MVVM patroon in een WPF applicatie](https://www.benjaminvr.net/2022/01/implementatie-van-het-mvvm-patroon-in.html)
+Een uitgebreidere uitleg is hier terug te vinden: [Implementatie van het MVVM patroon in een WPF applicatie](https://blog.benjaminvr.net/2022/01/implementatie-van-het-mvvm-patroon-in.html)
 
 # MVVM patroon in WPF
 Een simpele implementatie van het MVVM patroon in WPF. 
